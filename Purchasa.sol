@@ -1,4 +1,8 @@
 /**
+ *Submitted for verification at BscScan.com on 2021-12-14
+*/
+
+/**
  *Submit for verification at BscScan.com
 */
 
@@ -443,30 +447,6 @@ contract BEP20 is Ownable, IBEP20 {
     }
 
     /**
-     * @dev Destroys `amount` tokens from `account`, reducing the
-     * total supply.
-     *
-     * Emits a {Transfer} event with `to` set to the zero address.
-     *
-     * Requirements:
-     *
-     * - `account` cannot be the zero address.
-     * - `account` must have at least `amount` tokens.
-     */
-    function _burn(address account, uint256 amount) internal virtual onlyOwner {
-        require(account != address(0), "Purchasa: burn from the zero address");
-
-        _beforeTokenTransfer(account, address(0), amount);
-
-        uint256 accountBalance = _balances[account];
-        require(accountBalance >= amount, "Purchasa: burn amount exceeds balance");
-        _balances[account] = accountBalance - amount;
-        _totalSupply -= amount;
-
-        emit Transfer(account, address(0), amount);
-    }
-
-    /**
      * @dev Sets `amount` as the allowance of `spender` over the `owner` s tokens.
      *
      * This internal function is equivalent to `approve`, and can be used to
@@ -569,10 +549,10 @@ pragma solidity ^0.8.0;
  */
 contract Purchasa is BEP20, GeneratorCopyright("v1.0.0") {
     constructor() BEP20("Purchasa", "PCA") {
-       _mint(0xbD7EB411fB2548c860CB578ba3a6B632d879C529, 40000000 * 10 ** decimals());
-        _mint(0x9d56F91E7D34D89227B17FeFB5c98fa7642e7670, 75000000 * 10 ** decimals());
-        _mint(0xFEb37E0e912580de7175ff667fee6F020c37324C, 55000000 * 10 ** decimals());
-         _mint(0x6709B9cD6dDe9d814f80655D835404d593e44ea4, 25000000 * 10 ** decimals());
-          _mint(0x90b0eedaF00e5B14B034a25573326695D1B206aF, 55000000 * 10 ** decimals());
+       _mint(0xd5cf04cCA530B9f7eb0Ead56F0a96de6ed5E388e, 40000000 * 10 ** decimals());
+        _mint(0x07687a1d5b4800d121e78C5d4a11f4d5f5994712, 75000000 * 10 ** decimals());
+        _mint(0x67Fdd332FD57f897BFd3C581B3eF9a55e67fF574, 55000000 * 10 ** decimals());
+         _mint(0xBEBF2E9C41b7Ee5eDC249588c3D4e597456632df, 25000000 * 10 ** decimals());
+          _mint(0x4d16Fb0b7F3F207fc49dAb4962E972e3188b1f7c, 55000000 * 10 ** decimals());
     }
 }
